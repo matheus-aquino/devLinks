@@ -1,0 +1,11 @@
+p#segundo-p {
+    color: black;
+}
+
+p.p-principal {
+    color: blue;
+}
+
+p {
+    color: aqua;
+}

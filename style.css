@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* essa propriedade não permite que o valor do padding se some ao valor que foi definido como tamanho da caixa, por exemplo, 400px de largura com 50px de padding resultariam em 500px de largura total, mas quando essa propriedade é definida, isso não ocorre */
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(/assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color)
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto auto auto;
+  padding: 0 24px;
+}
+
+#profile {
+  text-align: center; /* está alinhando a imagem do Avatar ao centro da div #profile, pois a img é display inline */
+  padding: 24px;
+}
+
+/* profile */
+#profile img {
+  width: 112px;
+  margin: auto;
+}
+
+#profile p {
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* switch */
+#switch {
+  position: relative; /* faz com que o posicionamento seja relativo e, portanto, a posição absoluta do button torna-se absoluta apenas dentro do switch */
+  width: 64px;
+  margin: 4px auto; /* ALINHAMENTO DISPLAY BLOCK */
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute; /* serve para fazer uma sobreposição de camadas, fazendo com que um elemento fique sobre o outro */
+  z-index: 1; /* dessa forma, o elemento sobe uma camada e fica sobreposto ao outro */
+  transform: translateY(-50%); /* usado para movimentar o elemento na vertical (eixo Y) */
+  top: 50%; /* justamente com a tag transform, é possível alinhar o elemento exatamente ao centro da div com essa estratégia, pois ele joga 50% para cima do eixo Y e 50% para baixo, deixando alinhado bem ao meio.  */
+  left: 0;
+}
+
+.light #switch button{
+  /* Faz com que o botão se movimente */
+  right: 0;
+  left: initial; /* o valor inicial é à esquerda */
+}
+
+#switch span {
+  display: block;
+  width: 62px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction:column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a{
+  /* ALINHAMENTO DISPLAY FLEX */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social links */
+#social-links {
+  display: flex;
+  padding: 24px 0;
+  font-size: 24px;
+  justify-content: center;
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition: background 0.1s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  font-size: 29px;
+  transition: font-size 0.3s;
+}
+
+/* Rodapé */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+#rocket {
+    text-decoration: underline;
+}
+/*
+ ion-icon:hover {
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  padding: 16px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 30px;
+}
+*/

@@ -1,0 +1,27 @@
+body {
+    border: 1px solid black;
+}
+header {
+    border: 1px solid red; /* definirá uma borda para o elemento, sendo mais fácil a vizualização e a aplicação de mudanças */
+    margin: 10px;
+    padding: 50px;
+}
+
+h1 {
+    border: 1px solid green;
+    height: 50px;
+    width: 100px;
+    /*padding-left: 10px; */
+    margin-left: 30px;
+    display: inline;
+}
+
+p {
+    border: 1px solid blue;
+    display: inline;
+}
+
+span {
+    border: 1px solid purple;
+    display: inline;
+}
