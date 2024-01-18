@@ -34,7 +34,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px; /* a largura máxima será 588px, ou seja, não crescerá mais do que isso, tornando a tela desproporcional */
   margin: 56px auto auto auto;
   padding: 0 24px;
 }
