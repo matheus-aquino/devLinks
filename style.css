@@ -76,12 +76,19 @@ body * {
   transform: translateY(-50%); /* usado para movimentar o elemento na vertical (eixo Y) */
   top: 50%; /* justamente com a tag transform, é possível alinhar o elemento exatamente ao centro da div com essa estratégia, pois ele joga 50% para cima do eixo Y e 50% para baixo, deixando alinhado bem ao meio.  */
   left: 0;
+  animation: slide-out .4s;
 }
 
-.light #switch button{
-  /* Faz com que o botão se movimente */
+#switch button:hover{
+  outline: 8px solid var(--highlight-color); /* serve para criar um sombreamento ao redor do botão */
+}
+
+.light #switch button {
+  /* Faz com que o botão se movimente
   right: 0;
-  left: initial; /* o valor inicial é à esquerda */
+  left: initial; o valor inicial é à esquerda */
+
+  animation: slide-in .4s forwards; /* o forwards faz com que o as propriedades definidas na at rule se mantenham */
 }
 
 #switch span {
@@ -176,3 +183,22 @@ footer {
     --bg-url: url(./assets/bg-desktop-light.jpg)
   }
 }
+
+/* animations */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+  @keyframes slide-out {
+    from{
+      left: 50%;
+    }
+    to{
+      left: 0;
+    }
+  }
